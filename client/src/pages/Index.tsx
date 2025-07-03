@@ -2,6 +2,9 @@ import { useState, useMemo } from "react";
 import { Header } from "@/components/Header";
 import { TravelCard } from "@/components/TravelCard";
 import { FilterBar } from "@/components/FilterBar";
+import { HeroImageSlider } from "@/components/HeroImageSlider";
+import { TestimonialCarousel } from "@/components/TestimonialCarousel";
+import { BackToTop } from "@/components/BackToTop";
 import { travelPosts } from "@/data/travelPosts";
 
 const Index = () => {
@@ -49,17 +52,17 @@ const Index = () => {
       <Header />
       
       {/* Hero Section */}
-      <section className="relative bg-gradient-travel text-white py-20 overflow-hidden">
-        <div className="absolute inset-0 bg-black/20" />
+      <section className="relative text-white py-20 overflow-hidden">
+        <HeroImageSlider />
         <div className="container mx-auto px-4 relative z-10">
           <div className="text-center max-w-4xl mx-auto animate-fade-in">
-            <h1 className="text-5xl md:text-6xl font-bold mb-6">
+            <h1 className="text-5xl md:text-6xl font-bold mb-6 drop-shadow-lg">
               Capture Your Journey
             </h1>
-            <p className="text-xl md:text-2xl text-white/90 mb-8">
+            <p className="text-xl md:text-2xl text-white/90 mb-8 drop-shadow-md">
               Share your travel stories through stunning photography and connect with fellow wanderers
             </p>
-            <div className="flex items-center justify-center space-x-8 text-white/80">
+            <div className="flex items-center justify-center space-x-8 text-white/90">
               <div className="text-center">
                 <div className="text-2xl font-bold">{travelPosts.length}</div>
                 <div className="text-sm">Stories</div>
@@ -138,6 +141,23 @@ const Index = () => {
           </div>
         )}
       </section>
+
+      {/* Testimonials Section */}
+      <section className="bg-muted/30 py-16">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+              What Travelers Say
+            </h2>
+            <p className="text-muted-foreground max-w-2xl mx-auto">
+              Join thousands of adventurers who trust WanderLens to capture and share their most precious travel memories.
+            </p>
+          </div>
+          <TestimonialCarousel />
+        </div>
+      </section>
+
+      <BackToTop />
     </div>
   );
 };

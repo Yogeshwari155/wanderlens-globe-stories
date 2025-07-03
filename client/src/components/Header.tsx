@@ -1,5 +1,6 @@
 import { MapPin } from "lucide-react";
 import { Link } from "react-router-dom";
+import { MobileMenu } from "@/components/ui/mobile-menu";
 
 export const Header = () => {
   return (
@@ -23,17 +24,19 @@ export const Header = () => {
           <nav className="hidden md:flex items-center space-x-6">
             <Link 
               to="/" 
-              className="text-foreground hover:text-primary transition-colors font-medium"
+              className="text-foreground hover:text-primary transition-colors font-medium story-link"
             >
               Explore
             </Link>
             <Link 
               to="/about" 
-              className="text-muted-foreground hover:text-primary transition-colors"
+              className="text-muted-foreground hover:text-primary transition-colors story-link"
             >
               About
             </Link>
           </nav>
+          
+          <MobileMenu />
         </div>
       </div>
     </header>

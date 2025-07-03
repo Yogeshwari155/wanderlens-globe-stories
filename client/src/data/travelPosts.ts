@@ -110,5 +110,5 @@ export const getPostsByLocation = (location: string): TravelPost[] => {
 
 export const getAllTags = (): string[] => {
   const allTags = travelPosts.flatMap(post => post.tags);
-  return [...new Set(allTags)].sort();
+  return Array.from(new Set(allTags)).sort();
 };
